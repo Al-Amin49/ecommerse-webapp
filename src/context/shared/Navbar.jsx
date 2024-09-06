@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/chair/logo.png";
+import logo from "../../assets/img/logo.png";
 import {
   AiOutlineClose,
   AiOutlineMenu,
@@ -41,7 +41,7 @@ const Navbar = () => {
             <AiOutlineShopping className="text-2xl" />
           </a>
           <Link
-            href="#"
+            to="/login"
             className="bg-secondary hidden md:block  text-white px-4 py-1 rounded hover:bg-blue-600 text-center"
           >
             Login

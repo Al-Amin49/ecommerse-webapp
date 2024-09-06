@@ -2,9 +2,7 @@
 
 import  { useState } from 'react';
 import { useAuth } from '../../components/useAuth';
-
-
-
+import loginImg from "../../assets/img/login.png"
 
 const Login = () => {
     const { login } = useAuth();
@@ -17,8 +15,11 @@ const Login = () => {
     };
 
     return (
-        <form onSubmit={handleLogin}>
-            <input
+        <div className='flex'>
+         <div>
+         <form onSubmit={handleLogin}>
+           <div className="flex">
+           <input
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -30,9 +31,16 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
             />
+           </div>
             <button type="submit">Login</button>
             
         </form>
+         </div>
+
+         <div>
+        <img src={loginImg} alt="" />
+         </div>
+        </div>
     );
 };
 
