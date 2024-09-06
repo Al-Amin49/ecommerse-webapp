@@ -1,0 +1,147 @@
+[
+    {
+        "category": "Rocking chair",
+        "chair_name": "Rocking Chair Model 1",
+        "original_price": 100,
+        "discounted_price": 70,
+        "description": "Comfortable rocking chair with a modern design.",
+        "image": "https://i.ibb.co/vP406SC/chair3.png"
+      },
+      {
+        "category": "Rocking chair",
+        "chair_name": "Rocking Chair Model 2",
+        "original_price": 107,
+        "discounted_price": 75,
+        "description": "Elegant rocking chair with plush cushions.",
+        "image": "https://i.ibb.co/QXDZsB8/chair4.png"
+      },
+      {
+        "category": "Rocking chair",
+        "chair_name": "Rocking Chair Model 3",
+        "original_price": 120,
+        "discounted_price": 84,
+        "description": "Stylish rocking chair perfect for relaxation.",
+        "image": "https://i.ibb.co/Rh8X079/chair5.png"
+      },
+      {
+        "category": "Rocking chair",
+        "chair_name": "Rocking Chair Model 4",
+        "original_price": 130,
+        "discounted_price": 91,
+        "description": "Modern rocking chair with ergonomic design.",
+        "image": "https://i.ibb.co/NWz4ZWs/chair6.png"
+      },
+      {
+        "category": "Rocking chair",
+        "chair_name": "Rocking Chair Model 5",
+        "original_price": 140,
+        "discounted_price": 98,
+        "description": "Premium rocking chair with high-quality materials.",
+        "image": "https://i.ibb.co/rHyJ2t2/chair1.png"
+      },
+      {
+        "category": "Rocking chair",
+        "chair_name": "Rocking Chair Model 6",
+        "original_price": 150,
+        "discounted_price": 105,
+        "description": "Classic rocking chair with elegant finish.",
+        "image": "https://i.ibb.co/7JKGxVP/chair2.png"
+      },
+    
+      {
+        "category": "Side chair",
+        "chair_name": "Side Chair Model 1",
+        "original_price": 80,
+        "discounted_price": 56,
+        "description": "Minimalistic side chair with a sleek design.",
+        "image": "https://i.ibb.co/vP406SC/chair3.png"
+      },
+      {
+        "category": "Side chair",
+        "chair_name": "Side Chair Model 2",
+        "original_price": 90,
+        "discounted_price": 63,
+        "description": "Stylish side chair for modern interiors.",
+        "image": "https://i.ibb.co/QXDZsB8/chair4.png"
+      },
+      {
+        "category": "Side chair",
+        "chair_name": "Side Chair Model 3",
+        "original_price": 100,
+        "discounted_price": 70,
+        "description": "Comfortable side chair with high backrest.",
+        "image": "https://i.ibb.co/Rh8X079/chair5.png"
+      },
+      {
+        "category": "Side chair",
+        "chair_name": "Side Chair Model 4",
+        "original_price": 110,
+        "discounted_price": 77,
+        "description": "Elegant side chair with soft cushioning.",
+        "image": "https://i.ibb.co/NWz4ZWs/chair6.png"
+      },
+      {
+        "category": "Side chair",
+        "chair_name": "Side Chair Model 5",
+        "original_price": 120,
+        "discounted_price": 84,
+        "description": "Contemporary side chair with a minimalist look.",
+        "image": "https://i.ibb.co/rHyJ2t2/chair1.png"
+      },
+      {
+        "category": "Side chair",
+        "chair_name": "Side Chair Model 6",
+        "original_price": 130,
+        "discounted_price": 91,
+        "description": "Classic side chair with durable construction.",
+        "image": "https://i.ibb.co/7JKGxVP/chair2.png"
+      },
+    
+      {
+        "category": "Lounge chair",
+        "chair_name": "Lounge Chair Model 1",
+        "original_price": 150,
+        "discounted_price": 105,
+        "description": "Luxurious lounge chair with plush upholstery.",
+        "image": "https://i.ibb.co/vP406SC/chair3.png"
+      },
+      {
+        "category": "Lounge chair",
+        "chair_name": "Lounge Chair Model 2",
+        "original_price": 160,
+        "discounted_price": 112,
+        "description": "Elegant lounge chair with a contemporary design.",
+        "image": "https://i.ibb.co/QXDZsB8/chair4.png"
+      },
+      {
+        "category": "Lounge chair",
+        "chair_name": "Lounge Chair Model 3",
+        "original_price": 170,
+        "discounted_price": 119,
+        "description": "Comfortable lounge chair with adjustable recline.",
+        "image": "https://i.ibb.co/Rh8X079/chair5.png"
+      },
+      {
+        "category": "Lounge chair",
+        "chair_name": "Lounge Chair Model 4",
+        "original_price": 180,
+        "discounted_price": 126,
+        "description": "Modern lounge chair with sleek lines.",
+        "image": "https://i.ibb.co/NWz4ZWs/chair6.png"
+      },
+      {
+        "category": "Lounge chair",
+        "chair_name": "Lounge Chair Model 5",
+        "original_price": 190,
+        "discounted_price": 133,
+        "description": "Premium lounge chair with high-end materials.",
+        "image": "https://i.ibb.co/rHyJ2t2/chair1.png"
+      },
+      {
+        "category": "Lounge chair",
+        "chair_name": "Lounge Chair Model 6",
+        "original_price": 200,
+        "discounted_price": 140,
+        "description": "Classic lounge chair with luxurious comfort.",
+        "image": "https://i.ibb.co/7JKGxVP/chair2.png"
+      }]
