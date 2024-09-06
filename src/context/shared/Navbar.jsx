@@ -1,9 +1,9 @@
-import React from 'react';
+
 
 const Navbar = () => {
     return (
         <div>
-            
+            <h3>This is navbar</h3>
         </div>
     );
 };
