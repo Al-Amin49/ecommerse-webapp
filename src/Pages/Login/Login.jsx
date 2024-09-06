@@ -4,11 +4,13 @@ import loginImg from "../../assets/img/login.png";
 import googleLogo from "../../assets/img/icon.png"
 import { Link } from 'react-router-dom';
 import iconF from "../../assets/img/iconLogin.png"
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
   const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword]= useState(false)
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -36,18 +38,24 @@ const Login = () => {
                 className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col relative">
               <label htmlFor="password" className="mb-1 text-gray-600">
                 Password
               </label>
               <input
                 id="password"
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
+               <span
+                className="absolute right-3 top-10 cursor-pointer"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye/>}
+              </span>
             </div>
             <button
               type="submit"
