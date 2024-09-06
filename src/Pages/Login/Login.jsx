@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useAuth } from '../../components/useAuth';
 import loginImg from "../../assets/img/login.png";
 import googleLogo from "../../assets/img/icon.png"
+import { Link } from 'react-router-dom';
+import iconF from "../../assets/img/iconLogin.png"
 
 const Login = () => {
   const { login } = useAuth();
@@ -70,17 +72,28 @@ const Login = () => {
             <img src={googleLogo} alt=""  className='mr-1'/>
             Sign in with Google
           </button>
+          <div className='text-center mt-2'>
+          <p className=''>Have an account? <Link to='/signup'><span className='text-blue-600 font-medium'>SignUp</span></Link></p>
+          </div>
         </div>
       </div>
 
        {/* Image Section */}
-       <div className="hidden md:block md:w-1/2">
+       <div className="hidden md:block md:w-1/2 relative">
+
+       <div className='absolute inset-0 flex flex-col items-center justify-center text-center'>
+        <img src={iconF} alt="" />
+        <h3 className='font-bold text-white'>Furni<span className='text-blue-600 '>Flex</span></h3>
+        <p className='text-[#C8C4C4] w-[65%] mx-auto'>Discover a seamless shopping experience with our curated collection of products. From fashion to electronics, we bring quality.</p>
+       </div>
         <img
           src={loginImg}
           alt="Login"
           className="object-cover w-full h-full"
         />
+      
       </div>
+    
     </div>
   );
 };
