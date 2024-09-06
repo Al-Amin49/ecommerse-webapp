@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Navbar from "../../context/shared/Navbar";
-import Footer from "../../context/shared/Footer";
+import Navbar from "../shared/Navbar";
+import Footer from '../shared/Footer'
+
 
 const MainLayout = () => {
   const location = useLocation();
@@ -12,7 +13,7 @@ const MainLayout = () => {
       <div className="min-h-screen">
         <Outlet />
       </div>
-      {!shouldHideHeaderFooter && <Footer />}
+      {!shouldHideHeaderFooter && <Footer/>}
     </div>
   );
 };
