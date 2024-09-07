@@ -1,6 +1,8 @@
 import { AiOutlineShopping } from "react-icons/ai";
 
 const ProductCard = ({product}) => {
+
+  
     return (
         <>
           <div key={product.chair_name} className="border rounded-lg p-4 bg-white shadow">
