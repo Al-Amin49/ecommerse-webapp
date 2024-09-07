@@ -5,12 +5,15 @@ import {
   AiOutlineMenu,
   AiOutlineShopping,
 } from "react-icons/ai";
-import { useState } from "react";
+import {  useState } from "react";
 import { motion } from "framer-motion";
 import { useAuth } from "../hooks/useAuth";
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const {user, logout}= useAuth();
+
+  // const cartLength = useMemo(() => cartItems.reduce((total, item) => total + item.quantity, 0), [cartItems]);
+
   console.log('user', user)
 
   const toggleMenu = () => {
@@ -51,6 +54,7 @@ const Navbar = () => {
                 className="w-8 h-8 rounded-full"
               />
               <span className="text-gray-700">{user?.firstName}</span>
+              <span className="text-gray-700"></span>
               <button
                 onClick={logout}
                 className="bg-secondary text-white px-4 py-1 rounded hover:bg-blue-600"

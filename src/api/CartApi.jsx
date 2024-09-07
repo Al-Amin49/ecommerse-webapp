@@ -9,10 +9,12 @@ export const fetchCartByEmail = async (email) => {
 
 export const addToCart = async (item) => {
     const response = await axios.post(`${BASE_URL}/cart`, item, {
+      
         headers: {
             "Content-Type": "application/json",
         },
     });
+    console.log('response', response)
     return response.data;
 };
 

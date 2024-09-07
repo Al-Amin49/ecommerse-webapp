@@ -1,37 +1,26 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 import {
   addToCart,
   deleteCartItemById,
-  fetchCartByEmail,
   resetCartByUserId,
   updateCartItemById,
 } from "../api/CartApi";
-import { useAuth } from "../components/hooks/useAuth";
-
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const {user}= useAuth();
 
-
-  
-  useEffect(() => {
-    setLoading(true);
-    fetchCartByEmail(user?.email)
-      .then((items) => setCartItems(items))
-      .catch((err) => setError(err))
-      .finally(() => setLoading(false));
-  }, [user?.email]);
 
   const addItemToCart = async (item) => {
     setLoading(true);
     try {
       const newItem = await addToCart(item);
+      console.log('newItem', newItem)
       setCartItems((prevItems) => [...prevItems, newItem]);
     } catch (err) {
+        console.error('Error adding item to cart:', err);
       setError(err);
     } finally {
       setLoading(false);
@@ -67,7 +56,7 @@ export const CartProvider = ({ children }) => {
   const resetCart = async () => {
     setLoading(true);
     try {
-      await resetCartByUserId(userId);
+      await resetCartByUserId();
       setCartItems([]);
     } catch (err) {
       setError(err);

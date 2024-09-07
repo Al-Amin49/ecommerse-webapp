@@ -9,7 +9,7 @@ export const AuthContext = createContext();
 // AuthProvider to wrap your app and provide auth state
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [loading, setLoading]= useState(true)
+    const [loading, setLoading]= useState(false)
 
   // Function to handle login
   const login = async (userData) => {
