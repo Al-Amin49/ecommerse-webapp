@@ -3,6 +3,7 @@ import useAxiosPublic from "../../components/hooks/useAxiosPublic";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Loading from "../../components/Loading/Loading";
 import { useAuth } from "../../components/hooks/useAuth";
+import axios from "axios";
 
 const Products = () => {
   const axiosPublic = useAxiosPublic();
@@ -12,7 +13,7 @@ const Products = () => {
 
   useEffect(() => {
     const fetchedProducts = async () => {
-      const response = await axiosPublic.get("/products");
+      const response = await axios.get("product.json");
       console.log("respnse", response.data);
       setProducts(response.data);
     };
