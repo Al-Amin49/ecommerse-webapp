@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "../../components/useAuth";
+import { useAuth } from "../../components/hooks/useAuth";
 import loginImg from "../../assets/img/login.png";
 import googleLogo from "../../assets/img/icon.png";
 import { Link } from "react-router-dom";
@@ -105,7 +105,7 @@ const Login = () => {
           </button>
           <div className="text-center mt-2">
             <p className="">
-             Dont Have an account?{" "}
+              Dont Have an account?{" "}
               <Link to="/signup">
                 <span className="text-blue-600 font-medium">SignUp</span>
               </Link>
