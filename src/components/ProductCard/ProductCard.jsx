@@ -1,8 +1,16 @@
 import { AiOutlineShopping } from "react-icons/ai";
+import { useCart } from "../hooks/useCart";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const ProductCard = ({product}) => {
 
-  
+  const {addItemToCart}= useContext(CartContext);
+  const handleAddToCart=(item)=>{
+    addItemToCart(item);
+    console.log('cart added', item)
+
+  }
     return (
         <>
           <div key={product.chair_name} className="border rounded-lg p-4 bg-white shadow">
@@ -19,7 +27,9 @@ const ProductCard = ({product}) => {
             </p>
             <p className="text-gray-700">{product.description}</p>
           
-            <button className="flex w-full mt-2 bg-secondary items-center justify-center text-white px-2 py-1 rounded">
+            <button 
+            onClick={()=>handleAddToCart(product)}
+            className="flex w-full mt-2 bg-secondary items-center justify-center text-white px-2 py-1 rounded">
             <AiOutlineShopping className="mr-1" />
               Add to cart
               </button>

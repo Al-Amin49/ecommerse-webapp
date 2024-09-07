@@ -6,6 +6,7 @@ import {
   resetCartByUserId,
   updateCartItemById,
 } from "../api/CartApi";
+import { useAuth } from "../components/hooks/useAuth";
 
 export const CartContext = createContext();
 
@@ -13,8 +14,10 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const {user}= useAuth();
+  console.log('user', user?._id)
 
-  const userId = "user-id"; // Replace with actual user ID
+  const userId = "user-id"; 
 
   useEffect(() => {
     setLoading(true);

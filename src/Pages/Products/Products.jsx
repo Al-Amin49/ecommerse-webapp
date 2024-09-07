@@ -9,9 +9,7 @@ const Products = () => {
   const {loading}= useAuth();
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Rocking chair");
-  if(loading){
-    <Loading/>
-  }
+
   useEffect(() => {
     const fetchedProducts = async () => {
       const response = await axiosPublic.get("/products");
@@ -26,6 +24,9 @@ const Products = () => {
   const filteredProducts = products.filter(
     (product) => product.category === selectedCategory
   );
+  if(loading){
+    return <Loading/>
+  }
   return (
     <div className="flex flex-col lg:flex-row">
       {/* category tabs */}
