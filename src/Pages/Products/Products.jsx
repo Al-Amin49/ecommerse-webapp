@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../../components/hooks/useAxiosPublic";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import Loading from "../../components/Loading/Loading";
+import { useAuth } from "../../components/hooks/useAuth";
 
 const Products = () => {
   const axiosPublic = useAxiosPublic();
+  const {loading}= useAuth();
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Rocking chair");
+  if(loading){
+    <Loading/>
+  }
   useEffect(() => {
     const fetchedProducts = async () => {
       const response = await axiosPublic.get("/products");

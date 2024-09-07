@@ -2,20 +2,30 @@ import { useState } from "react";
 import { useAuth } from "../../components/hooks/useAuth";
 import loginImg from "../../assets/img/login.png";
 import googleLogo from "../../assets/img/icon.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import iconF from "../../assets/img/iconLogin.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const { login } = useAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+   const [showPassword, setShowPassword] = useState(false);
   const [agree, setAgree] = useState(false);
+  const {login}= useAuth();
+  const navigate=useNavigate()
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    login({ email, password });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log('data', data)
+  if(agree){
+    login(data)
+    window.alert("login successfully")
+    navigate("/")
+  }
   };
 
   return (
@@ -27,7 +37,7 @@ const Login = () => {
           <p className=" mb-8 text-[#707070]">
             Enter your credentials to access your account
           </p>
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div className="flex flex-col">
               <label htmlFor="email" className="mb-1 text-gray-600">
                 Email address
@@ -35,11 +45,13 @@ const Login = () => {
               <input
                 id="email"
                 type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                {...register("email", { required: "Email is required"})}
                 placeholder="Enter your email"
                 className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
+              {errors.email && (
+                <span className="text-red-500 text-sm">{errors.email.message}</span>
+              )}
             </div>
             <div className="flex flex-col relative">
               <label htmlFor="password" className="mb-1 text-gray-600">
@@ -48,11 +60,13 @@ const Login = () => {
               <input
                 id="password"
                 type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                {...register("password", { required: "Password is required"})}
                 placeholder="Enter your password"
                 className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
+               {errors.password && (
+                <span className="text-red-500 text-sm">{errors.password.message}</span>
+              )}
               <span
                 className="absolute right-3 top-10 cursor-pointer"
                 onClick={() => setShowPassword(!showPassword)}

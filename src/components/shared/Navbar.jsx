@@ -7,8 +7,11 @@ import {
 } from "react-icons/ai";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useAuth } from "../hooks/useAuth";
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
+  const {user, logout}= useAuth();
+  console.log('user', user)
 
   const toggleMenu = () => {
     setOpen(!isOpen);
@@ -40,12 +43,29 @@ const Navbar = () => {
           >
             <AiOutlineShopping className="text-2xl" />
           </a>
-          <Link
-            to="/login"
-            className="bg-secondary hidden md:block  text-white px-4 py-1 rounded hover:bg-blue-600 text-center"
-          >
-            Login
-          </Link>
+          {user ? (
+            <div className="flex items-center space-x-2">
+              <img
+                src={user?.photo} 
+                alt="avatar"
+                className="w-8 h-8 rounded-full"
+              />
+              <span className="text-gray-700">{user?.firstName}</span>
+              <button
+                onClick={logout}
+                className="bg-secondary text-white px-4 py-1 rounded hover:bg-blue-600"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link
+              to="/login"
+              className="bg-secondary hidden md:block text-white px-4 py-1 rounded hover:bg-blue-600 text-center"
+            >
+              Login
+            </Link>
+          )}
         </div>
         {/* hamburger & shopping cart for small screen  */}
 

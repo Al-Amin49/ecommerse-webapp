@@ -1,5 +1,5 @@
 
-
+import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
@@ -18,9 +18,11 @@ export const AuthProvider = ({ children }) => {
         const response = await axios.post("https://ecommerse-webapp.vercel.app/login", userData);
         const data = response.data;
 
+        
         if (data.success) {
-            setUser(data.token); 
-            localStorage.setItem('user', JSON.stringify(data.token));
+            const decodedToken =jwtDecode(data.token); // Decode the JWT token
+            setUser(decodedToken); // Store the decoded user information
+            localStorage.setItem('user', JSON.stringify(decodedToken)); // Store the decoded user information in localStorage
         } else {
             console.error(data.message);
         }
