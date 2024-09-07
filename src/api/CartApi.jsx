@@ -2,8 +2,8 @@ import axios from 'axios';
 
 const BASE_URL = "https://ecommerse-webapp.vercel.app"; 
 
-export const fetchCartByUserId = async (userId) => {
-    const response = await axios.get(`${BASE_URL}/cart/${userId}`);
+export const fetchCartByEmail = async (email) => {
+    const response = await axios.get(`${BASE_URL}/carts?email=${email}`);
     return response.data;
 };
 

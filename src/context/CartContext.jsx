@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 import {
   addToCart,
   deleteCartItemById,
-  fetchCartByUserId,
+  fetchCartByEmail,
   resetCartByUserId,
   updateCartItemById,
 } from "../api/CartApi";
@@ -15,17 +15,16 @@ export const CartProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const {user}= useAuth();
-  console.log('user', user?._id)
 
-  const userId = "user-id"; 
 
+  
   useEffect(() => {
     setLoading(true);
-    fetchCartByUserId(userId)
+    fetchCartByEmail(user?.email)
       .then((items) => setCartItems(items))
       .catch((err) => setError(err))
       .finally(() => setLoading(false));
-  }, [userId]);
+  }, [user?.email]);
 
   const addItemToCart = async (item) => {
     setLoading(true);

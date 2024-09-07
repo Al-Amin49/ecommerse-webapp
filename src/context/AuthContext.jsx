@@ -21,6 +21,7 @@ export const AuthProvider = ({ children }) => {
         
         if (data.success) {
             const decodedToken =jwtDecode(data.token); // Decode the JWT token
+            console.log("Decoded Token:", decodedToken); 
             setUser(decodedToken); // Store the decoded user information
             localStorage.setItem('user', JSON.stringify(decodedToken)); // Store the decoded user information in localStorage
         } else {
@@ -41,7 +42,7 @@ export const AuthProvider = ({ children }) => {
             const data = response.data;
 
             if (data.success) {
-                setUser(userData); // Store the user data as needed
+                setUser(userData); 
                 localStorage.setItem('user', JSON.stringify(userData));
             } else {
                 console.error(data.message);

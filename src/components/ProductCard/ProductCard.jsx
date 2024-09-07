@@ -1,14 +1,20 @@
 import { AiOutlineShopping } from "react-icons/ai";
+
 import { useCart } from "../hooks/useCart";
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { useAuth } from "../hooks/useAuth";
 
 const ProductCard = ({product}) => {
-
-  const {addItemToCart}= useContext(CartContext);
+const {user}= useAuth();
+console.log('email', user?.email)
+  const {addItemToCart}= useCart();
   const handleAddToCart=(item)=>{
-    addItemToCart(item);
-    console.log('cart added', item)
+    const data={
+      productId: item?._id,
+      email: user?.email,
+      ...item
+    }
+    addItemToCart(data);
+    console.log('cart added', data)
 
   }
     return (
