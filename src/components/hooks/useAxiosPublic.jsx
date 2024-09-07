@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosPublic = axios.create({
-    baseURL: 'https://ecommerse-webapp.vercel.app/'
+    baseURL: 'https://ecommerse-webapp.vercel.app'
 })
 
 const useAxiosPublic = () => {
